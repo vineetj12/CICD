@@ -1,0 +1,20 @@
+name: Test CI/CD Trigger
+
+on:
+  push:
+    branches:
+      - feature/fix-sum  # or your branch
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print message
+        run: echo "✅ CI/CD is working!"
